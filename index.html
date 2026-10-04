@@ -130,10 +130,10 @@
     }
 
     #relationship-time {
-      font-size: clamp(18px, 4vw, 38px);
+      font-size: clamp(17px, 4vw, 38px);
       font-weight: 700;
       color: #633e4e;
-      line-height: 1.35;
+      line-height: 1.45;
     }
 
     .since {
@@ -433,7 +433,7 @@
       }
 
       #relationship-time {
-        font-size: 19px;
+        font-size: 17px;
       }
 
       .favorites-grid {
@@ -481,7 +481,7 @@
         </div>
 
         <div id="relationship-time">
-          0 years, 0 months, 0 days, 0 hours, 0 minutes, 0 seconds
+          0 years, 0 months, 0 weeks, 0 days, 0 hours, 0 minutes, 0 seconds
         </div>
 
         <div class="since">
@@ -631,21 +631,10 @@
 
         <ul class="little-list">
 
-          <li>
-            random calls
-          </li>
-
-          <li>
-            late nights
-          </li>
-
-          <li>
-            being annoying
-          </li>
-
-          <li>
-            checking in
-          </li>
+          <li>random calls</li>
+          <li>late nights</li>
+          <li>being annoying</li>
+          <li>checking in</li>
 
         </ul>
 
@@ -730,122 +719,251 @@
 
       const now = new Date();
 
+      /*
+        If the relationship start date is in the future,
+        show zeros.
+      */
+
+      if (now < startDate) {
+
+        document.getElementById(
+          "relationship-time"
+        ).textContent =
+          "0 years, 0 months, 0 weeks, 0 days, 0 hours, 0 minutes, 0 seconds";
+
+        return;
+      }
+
+
+      /*
+        Calculate completed years.
+      */
+
       let years =
         now.getFullYear() -
         startDate.getFullYear();
 
+
+      let anniversary =
+        new Date(startDate);
+
+      anniversary.setFullYear(
+        startDate.getFullYear() + years
+      );
+
+
+      if (anniversary > now) {
+
+        years--;
+
+        anniversary =
+          new Date(startDate);
+
+        anniversary.setFullYear(
+          startDate.getFullYear() + years
+        );
+
+      }
+
+
+      /*
+        Calculate completed months
+        after the years.
+      */
+
       let months =
         now.getMonth() -
-        startDate.getMonth();
-
-      let days =
-        now.getDate() -
-        startDate.getDate();
-
-      let hours =
-        now.getHours() -
-        startDate.getHours();
-
-      let minutes =
-        now.getMinutes() -
-        startDate.getMinutes();
-
-      let seconds =
-        now.getSeconds() -
-        startDate.getSeconds();
+        anniversary.getMonth();
 
 
-      if (seconds < 0) {
-        minutes--;
-        seconds += 60;
-      }
-
-      if (minutes < 0) {
-        hours--;
-        minutes += 60;
-      }
-
-      if (hours < 0) {
-        days--;
-        hours += 24;
-      }
-
-
-      if (days < 0) {
+      if (
+        now.getDate() <
+        anniversary.getDate()
+      ) {
 
         months--;
 
-        const previousMonth =
-          new Date(
-            now.getFullYear(),
-            now.getMonth(),
-            0
-          );
-
-        days += previousMonth.getDate();
       }
 
 
       if (months < 0) {
 
-        years--;
-
         months += 12;
-      }
-
-
-      if (years < 0) {
-
-        years = 0;
-        months = 0;
-        days = 0;
-        hours = 0;
-        minutes = 0;
-        seconds = 0;
 
       }
 
 
-      const yearText =
-        years === 1
-          ? "year"
-          : "years";
+      let monthDate =
+        new Date(anniversary);
 
-      const monthText =
-        months === 1
-          ? "month"
-          : "months";
+      monthDate.setMonth(
+        anniversary.getMonth() + months
+      );
 
-      const dayText =
-        days === 1
-          ? "day"
-          : "days";
 
-      const hourText =
-        hours === 1
-          ? "hour"
-          : "hours";
+      if (monthDate > now) {
 
-      const minuteText =
-        minutes === 1
-          ? "minute"
-          : "minutes";
+        months--;
 
-      const secondText =
-        seconds === 1
-          ? "second"
-          : "seconds";
+        monthDate =
+          new Date(anniversary);
 
+        monthDate.setMonth(
+          anniversary.getMonth() + months
+        );
+
+      }
+
+
+      /*
+        Everything remaining after
+        years and months.
+      */
+
+      let remaining =
+        Math.floor(
+          (now - monthDate) / 1000
+        );
+
+
+      /*
+        Days.
+      */
+
+      const days =
+        Math.floor(
+          remaining / 86400
+        );
+
+
+      /*
+        Weeks are complete groups
+        of 7 days.
+      */
+
+      const weeks =
+        Math.floor(
+          days / 7
+        );
+
+
+      const extraDays =
+        days % 7;
+
+
+      remaining =
+        remaining % 86400;
+
+
+      /*
+        Hours.
+      */
+
+      const hours =
+        Math.floor(
+          remaining / 3600
+        );
+
+
+      remaining =
+        remaining % 3600;
+
+
+      /*
+        Minutes.
+      */
+
+      const minutes =
+        Math.floor(
+          remaining / 60
+        );
+
+
+      /*
+        Seconds.
+      */
+
+      const seconds =
+        remaining % 60;
+
+
+      /*
+        Singular / plural helper.
+      */
+
+      function plural(
+        number,
+        word
+      ) {
+
+        return (
+          number +
+          " " +
+          word +
+          (number === 1 ? "" : "s")
+        );
+
+      }
+
+
+      /*
+        Update the counter.
+      */
 
       document.getElementById(
         "relationship-time"
-      ).textContent =
-        `${years} ${yearText}, ${months} ${monthText}, ${days} ${dayText}, ${hours} ${hourText}, ${minutes} ${minuteText}, ${seconds} ${secondText}`;
+      ).textContent = [
+
+        plural(
+          years,
+          "year"
+        ),
+
+        plural(
+          months,
+          "month"
+        ),
+
+        plural(
+          weeks,
+          "week"
+        ),
+
+        plural(
+          extraDays,
+          "day"
+        ),
+
+        plural(
+          hours,
+          "hour"
+        ),
+
+        plural(
+          minutes,
+          "minute"
+        ),
+
+        plural(
+          seconds,
+          "second"
+        )
+
+      ].join(", ");
 
     }
 
 
+    /*
+      Run immediately.
+    */
+
     updateRelationshipTime();
+
+
+    /*
+      Update every second.
+    */
 
     setInterval(
       updateRelationshipTime,
