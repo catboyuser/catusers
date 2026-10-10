@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>kaqer & sky</title>
+  <title>kaqer &amp; sky</title>
 
   <style>
     * {
@@ -30,14 +29,12 @@
       position: fixed;
       inset: 0;
       z-index: -2;
-
       background:
         linear-gradient(
           rgba(255, 220, 233, .76),
           rgba(255, 220, 233, .76)
         ),
         url("IMG_2606.jpeg");
-
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -49,7 +46,6 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-
       background:
         radial-gradient(
           circle at 15% 15%,
@@ -69,8 +65,6 @@
       padding: 32px 0 50px;
     }
 
-    /* HERO */
-
     .hero {
       min-height: 470px;
       display: flex;
@@ -78,19 +72,14 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-
       padding: 60px 25px;
       margin-bottom: 25px;
-
       border: 1px solid rgba(255,255,255,.75);
       border-radius: 34px;
-
       background: rgba(255,255,255,.38);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-
-      box-shadow:
-        0 25px 70px rgba(128, 57, 84, .15);
+      box-shadow: 0 25px 70px rgba(128,57,84,.15);
     }
 
     .hero-small {
@@ -142,22 +131,9 @@
       opacity: .62;
     }
 
-    /* SECTION */
-
     section {
       margin-top: 25px;
     }
-
-    .section-label {
-      margin: 0 0 12px 8px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #805367;
-    }
-
-    /* GRID */
 
     .dashboard {
       display: grid;
@@ -168,26 +144,17 @@
     .card {
       border: 1px solid rgba(255,255,255,.75);
       border-radius: 28px;
-
       background: rgba(255,255,255,.46);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-
-      box-shadow:
-        0 18px 50px rgba(128, 57, 84, .12);
-
+      box-shadow: 0 18px 50px rgba(128,57,84,.12);
       padding: 30px;
-
-      transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .card:hover {
       transform: translateY(-4px);
-
-      box-shadow:
-        0 25px 60px rgba(128, 57, 84, .16);
+      box-shadow: 0 25px 60px rgba(128,57,84,.16);
     }
 
     .card-title {
@@ -196,8 +163,6 @@
       color: #673f50;
       margin-bottom: 20px;
     }
-
-    /* US */
 
     .us-card {
       min-height: 330px;
@@ -209,12 +174,9 @@
     .us-date {
       display: inline-block;
       width: fit-content;
-
       padding: 8px 13px;
       border-radius: 100px;
-
       background: rgba(255,255,255,.7);
-
       font-size: 12px;
       font-weight: 700;
       color: #86566a;
@@ -238,8 +200,6 @@
       opacity: .68;
     }
 
-    /* THINGS WE LIKE */
-
     .likes-card {
       min-height: 330px;
     }
@@ -253,15 +213,11 @@
     .tag {
       padding: 11px 15px;
       border-radius: 100px;
-
       background: rgba(255,255,255,.68);
       border: 1px solid rgba(255,255,255,.7);
-
       font-size: 13px;
       color: #75495a;
     }
-
-    /* FAVORITES */
 
     .favorites-card {
       grid-column: 1 / -1;
@@ -276,13 +232,10 @@
 
     .favorite {
       min-height: 135px;
-
       padding: 22px;
       border-radius: 22px;
-
       background: rgba(255,255,255,.55);
       border: 1px solid rgba(255,255,255,.65);
-
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -301,15 +254,11 @@
       color: #704456;
     }
 
-    /* BOTTOM GRID */
-
     .bottom-grid {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
       gap: 25px;
     }
-
-    /* LITTLE THINGS */
 
     .little-list {
       list-style: none;
@@ -318,7 +267,6 @@
     .little-list li {
       padding: 15px 0;
       border-bottom: 1px solid rgba(120,70,90,.12);
-
       font-size: 14px;
       color: #75495a;
     }
@@ -326,8 +274,6 @@
     .little-list li:last-child {
       border-bottom: none;
     }
-
-    /* MEMORIES */
 
     .memory {
       padding: 20px 0;
@@ -359,22 +305,16 @@
       line-height: 1.5;
     }
 
-    /* FOOTER */
-
     footer {
       text-align: center;
       padding: 45px 0 5px;
-
       font-size: 12px;
       letter-spacing: 1px;
       color: #825469;
       opacity: .7;
     }
 
-    /* MOBILE */
-
     @media (max-width: 800px) {
-
       .page {
         width: min(100% - 20px, 650px);
         padding-top: 10px;
@@ -419,7 +359,6 @@
     }
 
     @media (max-width: 430px) {
-
       .page {
         width: calc(100% - 14px);
       }
@@ -457,87 +396,37 @@
 </head>
 
 <body>
-
   <main class="page">
 
-    <!-- HERO -->
-
     <header class="hero">
-
-      <div class="hero-small">
-        our little world
-      </div>
-
-      <h1>kaqer & sky</h1>
-
-      <div class="hero-sub">
-        just us.
-      </div>
+      <div class="hero-small">our little world</div>
+      <h1>kaqer &amp; sky</h1>
+      <div class="hero-sub">just us.</div>
 
       <div class="counter-wrap">
-
-        <div class="counter-label">
-          we've been together for
-        </div>
-
-        <div id="relationship-time">
-          0 years, 0 months, 0 weeks, 0 days, 0 hours, 0 minutes, 0 seconds
-        </div>
-
-        <div class="since">
-          since September 13, 2026
-        </div>
-
+        <div class="counter-label">we've been together for</div>
+        <div id="relationship-time">0 years, 0 months, 0 weeks</div>
+        <div class="since">since September 13, 2026</div>
       </div>
-
     </header>
-
-
-    <!-- MAIN DASHBOARD -->
 
     <div class="dashboard">
 
-      <!-- US -->
-
       <section class="card us-card">
-
         <div>
-
-          <div class="card-title">
-            us
-          </div>
-
-          <div class="us-date">
-            September 13, 2026
-          </div>
-
+          <div class="card-title">us</div>
+          <div class="us-date">September 13, 2026</div>
         </div>
 
         <div class="us-content">
-
-          <div class="us-title">
-            we started dating
-          </div>
-
-          <div class="us-text">
-            The day we became us.
-          </div>
-
+          <div class="us-title">we started dating</div>
+          <div class="us-text">The day we became us.</div>
         </div>
-
       </section>
 
-
-      <!-- THINGS WE LIKE -->
-
       <section class="card likes-card">
-
-        <div class="card-title">
-          things we like
-        </div>
-
+        <div class="card-title">things we like</div>
         <div class="tag-list">
-
           <div class="tag">calling</div>
           <div class="tag">late nights</div>
           <div class="tag">laughing together</div>
@@ -546,431 +435,131 @@
           <div class="tag">talking for hours</div>
           <div class="tag">being together</div>
           <div class="tag">random moments</div>
-
         </div>
-
       </section>
 
-
-      <!-- FAVORITES -->
-
       <section class="card favorites-card">
-
-        <div class="card-title">
-          our favorites
-        </div>
+        <div class="card-title">our favorites</div>
 
         <div class="favorites-grid">
-
           <div class="favorite">
-
-            <div class="favorite-label">
-              kaqer's color
-            </div>
-
-            <div class="favorite-value">
-              purple
-            </div>
-
+            <div class="favorite-label">kaqer's color</div>
+            <div class="favorite-value">purple</div>
           </div>
 
           <div class="favorite">
-
-            <div class="favorite-label">
-              sky's color
-            </div>
-
-            <div class="favorite-value">
-              pink
-            </div>
-
+            <div class="favorite-label">sky's color</div>
+            <div class="favorite-value">pink</div>
           </div>
 
           <div class="favorite">
-
-            <div class="favorite-label">
-              flowers
-            </div>
-
-            <div class="favorite-value">
-              lilies
-            </div>
-
+            <div class="favorite-label">flowers</div>
+            <div class="favorite-value">lilies</div>
           </div>
 
           <div class="favorite">
-
-            <div class="favorite-label">
-              love language
-            </div>
-
-            <div class="favorite-value">
-              physical touch
-            </div>
-
+            <div class="favorite-label">love language</div>
+            <div class="favorite-value">physical touch</div>
           </div>
-
         </div>
-
       </section>
 
     </div>
 
-
-    <!-- LOWER DASHBOARD -->
-
     <div class="bottom-grid">
 
-      <!-- LITTLE THINGS -->
-
       <section class="card">
-
-        <div class="card-title">
-          little things
-        </div>
-
+        <div class="card-title">little things</div>
         <ul class="little-list">
-
           <li>random calls</li>
           <li>late nights</li>
           <li>being annoying</li>
           <li>checking in</li>
-
         </ul>
-
       </section>
 
-
-      <!-- MEMORIES -->
-
       <section class="card">
+        <div class="card-title">memories</div>
 
-        <div class="card-title">
-          memories
+        <div class="memory">
+          <div class="memory-date">September 13, 2026</div>
+          <div class="memory-title">started dating</div>
+          <div class="memory-text">The beginning of us.</div>
         </div>
 
         <div class="memory">
-
-          <div class="memory-date">
-            September 13, 2026
-          </div>
-
-          <div class="memory-title">
-            started dating
-          </div>
-
-          <div class="memory-text">
-            The beginning of us.
-          </div>
-
+          <div class="memory-date">our little moments</div>
+          <div class="memory-title">random conversations</div>
+          <div class="memory-text">laughs, calls, and everything in between.</div>
         </div>
-
 
         <div class="memory">
-
-          <div class="memory-date">
-            our little moments
-          </div>
-
-          <div class="memory-title">
-            random conversations
-          </div>
-
-          <div class="memory-text">
-            laughs, calls, and everything in between.
-          </div>
-
+          <div class="memory-date">still making them</div>
+          <div class="memory-title">more memories</div>
+          <div class="memory-text">More moments to look back on.</div>
         </div>
-
-
-        <div class="memory">
-
-          <div class="memory-date">
-            still making them
-          </div>
-
-          <div class="memory-title">
-            more memories
-          </div>
-
-          <div class="memory-text">
-            More moments to look back on.
-          </div>
-
-        </div>
-
       </section>
 
     </div>
 
-
-    <footer>
-      kaqer & sky
-    </footer>
-
+    <footer>kaqer &amp; sky</footer>
   </main>
 
-
   <script>
-
     const startDate = new Date("2026-09-13T00:00:00");
 
     function updateRelationshipTime() {
-
       const now = new Date();
-
-      /*
-        If the relationship start date is in the future,
-        show zeros.
-      */
+      const counter = document.getElementById("relationship-time");
 
       if (now < startDate) {
-
-        document.getElementById(
-          "relationship-time"
-        ).textContent =
-          "0 years, 0 months, 0 weeks, 0 days, 0 hours, 0 minutes, 0 seconds";
-
+        counter.textContent = "0 years, 0 months, 0 weeks";
         return;
       }
 
+      let years = now.getFullYear() - startDate.getFullYear();
 
-      /*
-        Calculate completed years.
-      */
-
-      let years =
-        now.getFullYear() -
-        startDate.getFullYear();
-
-
-      let anniversary =
-        new Date(startDate);
-
-      anniversary.setFullYear(
-        startDate.getFullYear() + years
-      );
-
+      let anniversary = new Date(startDate);
+      anniversary.setFullYear(startDate.getFullYear() + years);
 
       if (anniversary > now) {
-
         years--;
-
-        anniversary =
-          new Date(startDate);
-
-        anniversary.setFullYear(
-          startDate.getFullYear() + years
-        );
-
+        anniversary = new Date(startDate);
+        anniversary.setFullYear(startDate.getFullYear() + years);
       }
-
-
-      /*
-        Calculate completed months
-        after the years.
-      */
 
       let months =
-        now.getMonth() -
-        anniversary.getMonth();
+        (now.getFullYear() - anniversary.getFullYear()) * 12 +
+        now.getMonth() - anniversary.getMonth();
 
-
-      if (
-        now.getDate() <
-        anniversary.getDate()
-      ) {
-
-        months--;
-
-      }
-
-
-      if (months < 0) {
-
-        months += 12;
-
-      }
-
-
-      let monthDate =
-        new Date(anniversary);
-
-      monthDate.setMonth(
-        anniversary.getMonth() + months
-      );
-
+      let monthDate = new Date(anniversary);
+      monthDate.setMonth(anniversary.getMonth() + months);
 
       if (monthDate > now) {
-
         months--;
-
-        monthDate =
-          new Date(anniversary);
-
-        monthDate.setMonth(
-          anniversary.getMonth() + months
-        );
-
+        monthDate = new Date(anniversary);
+        monthDate.setMonth(anniversary.getMonth() + months);
       }
 
+      const days = Math.floor(
+        (now - monthDate) / (1000 * 60 * 60 * 24)
+      );
 
-      /*
-        Everything remaining after
-        years and months.
-      */
+      const weeks = Math.floor(days / 7);
 
-      let remaining =
-        Math.floor(
-          (now - monthDate) / 1000
-        );
-
-
-      /*
-        Days.
-      */
-
-      const days =
-        Math.floor(
-          remaining / 86400
-        );
-
-
-      /*
-        Weeks are complete groups
-        of 7 days.
-      */
-
-      const weeks =
-        Math.floor(
-          days / 7
-        );
-
-
-      const extraDays =
-        days % 7;
-
-
-      remaining =
-        remaining % 86400;
-
-
-      /*
-        Hours.
-      */
-
-      const hours =
-        Math.floor(
-          remaining / 3600
-        );
-
-
-      remaining =
-        remaining % 3600;
-
-
-      /*
-        Minutes.
-      */
-
-      const minutes =
-        Math.floor(
-          remaining / 60
-        );
-
-
-      /*
-        Seconds.
-      */
-
-      const seconds =
-        remaining % 60;
-
-
-      /*
-        Singular / plural helper.
-      */
-
-      function plural(
-        number,
-        word
-      ) {
-
-        return (
-          number +
-          " " +
-          word +
-          (number === 1 ? "" : "s")
-        );
-
+      function plural(number, word) {
+        return number + " " + word + (number === 1 ? "" : "s");
       }
 
-
-      /*
-        Update the counter.
-      */
-
-      document.getElementById(
-        "relationship-time"
-      ).textContent = [
-
-        plural(
-          years,
-          "year"
-        ),
-
-        plural(
-          months,
-          "month"
-        ),
-
-        plural(
-          weeks,
-          "week"
-        ),
-
-        plural(
-          extraDays,
-          "day"
-        ),
-
-        plural(
-          hours,
-          "hour"
-        ),
-
-        plural(
-          minutes,
-          "minute"
-        ),
-
-        plural(
-          seconds,
-          "second"
-        )
-
+      counter.textContent = [
+        plural(years, "year"),
+        plural(months, "month"),
+        plural(weeks, "week")
       ].join(", ");
-
     }
 
-
-    /*
-      Run immediately.
-    */
-
     updateRelationshipTime();
-
-
-    /*
-      Update every second.
-    */
-
-    setInterval(
-      updateRelationshipTime,
-      1000
-    );
-
+    setInterval(updateRelationshipTime, 60000);
   </script>
-
 </body>
 </html>
